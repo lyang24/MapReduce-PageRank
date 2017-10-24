@@ -1,8 +1,8 @@
 # MapReduce PageRank
 
-I deploy a hadoop cluster on Docker.
+I deploy this project with a hadoop cluster on Docker.
 
-## Main Steps
+### Main Steps
 
   Build a pagerank Libraray from wiki data sets.
 
@@ -16,7 +16,7 @@ I deploy a hadoop cluster on Docker.
 
 raw data from https://www.limfinity.com/ir/
 
-Data preprocessing
+### Data preprocessing
 
 I preprocessed the original dataset in two steps:
 
@@ -24,7 +24,7 @@ Give every website a tag, mapping the tag to every website.
 
 Change the data in each pagelink file into the following format: frompage-id topage-id.
 
-Technical details:
+### Technical details:
 
   mr1_mapper1: use relation.txt to generate transition matrix cell
 
@@ -38,11 +38,12 @@ Technical details:
 
   mr2_reducer: sum up cell for each page
 
-$ hadoop com.sun.tools.javac.Main *.java
-$ jar cf ngram.jar *.class
-$ hadoop jar pr.jar Driver /transition /pagerank /output 5 0.8
-args0: dir of transition.txt
-args1: dir of PageRank.txt
-args2: dir of unitMultiplication result
-args3: times of convergence
-args4: value of beta
+  $ hadoop com.sun.tools.javac.Main *.java
+  $ jar cf ngram.jar *.class
+  $ hadoop jar pr.jar Driver /transition /pagerank /output 5 0.8
+  
+  args0: dir of transition.txt
+  args1: dir of PageRank.txt
+  args2: dir of unitMultiplication result
+  args3: times of convergence
+  args4: value of beta
