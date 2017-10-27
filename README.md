@@ -37,11 +37,12 @@ Change the data in each pagelink file into the following format: frompage-id top
   mr2_mapper2: teleporting:read pageRank_i.txt, which will add beta*e to result sum
 
   mr2_reducer: sum up cell for each page
-'''
+
+```
   $ hadoop com.sun.tools.javac.Main *.java
   $ jar cf ngram.jar *.class
   $ hadoop jar pr.jar Driver /transition /pagerank /output 5 0.8
-'''
+```
   args0: dir of transition.txt
   args1: dir of PageRank.txt
   args2: dir of unitMultiplication result
