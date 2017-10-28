@@ -26,17 +26,17 @@ Change the data in each pagelink file into the following format: frompage-id top
 
 ### Technical details:
 
-  mr1_mapper1: use relation.txt to generate transition matrix cell
+  *mr1_mapper1: use relation.txt to generate transition matrix cell
 
-  mr1_mapper2: use PageRank.txt to generate pagerank matrix cell
+  *mr1_mapper2: use PageRank.txt to generate pagerank matrix cell
 
-  mr1_reducer: calculate results of matrix cell * pagerank cell
+  *mr1_reducer: calculate results of matrix cell * pagerank cell
 
-  mr2_mapper1: read file generated from last mapreduce
+  *mr2_mapper1: read file generated from last mapreduce
 
-  mr2_mapper2: teleporting:read pageRank_i.txt, which will add beta*e to result sum
+  *mr2_mapper2: teleporting:read pageRank_i.txt, which will add beta*e to result sum
 
-  mr2_reducer: sum up cell for each page
+  *mr2_reducer: sum up cell for each page
 
 ```
   $ hadoop com.sun.tools.javac.Main *.java
